@@ -10,5 +10,9 @@ class Like(models.Model):
 
 
 
-
+class Comment(models.Model):
+    content = models.TextField()
+    comment_at = models.DateTimeField(auto_now_add=True)
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='comments')
+    object_id = models.PositiveIntegerField()
 
