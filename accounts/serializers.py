@@ -26,3 +26,9 @@ class UserRegisterSerializer(serializers.ModelSerializer):
         if data['password'] != data['password2']:
             raise serializers.ValidationError("Passwords must mach")
         return data
+
+
+class UserLoginSerializer(serializers.Serializer):
+    user_identifier = serializers.CharField()
+    password = serializers.CharField()
+    password2 = serializers.CharField()
