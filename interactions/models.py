@@ -9,7 +9,6 @@ class Like(models.Model):
     object_id = models.PositiveIntegerField()
 
 
-
 class Comment(models.Model):
     content = models.TextField()
     comment_at = models.DateTimeField(auto_now_add=True)
